@@ -1,0 +1,30 @@
+%Author: Vanessa Dantas de Souto Costa, Felipe Ferreira Barbosa, Paulo
+%Correia
+
+
+%treinamento
+%variaveis para treinamento
+nce=1;
+nuce=20;
+TA=0.000005;
+
+epMax=50000;
+emqTarget=0.000001;
+percentrein=0.8;
+alphaMomento=0.6;
+face='LOGSIGMOIDE'; %opcoes 'LOGSIGMOIDE' e 'TANGENTESIGMOIDE'
+ini=[];
+
+%Gerar entrada e saida desejada com base nos dados gerados ao rodar a bomba
+ordem=1;
+atraso=7;
+tanque=2;
+
+[in,out,passoTempo]=seguidorNivel(ordem,atraso,tanque);
+
+%dividir entre validacao e treinamento
+%devemos pegar percentrein para treinamento e o restante para
+%validacao
+%percentual --> inidca quantos dados serão usados para treinamento e
+%quantos para validacao
+percentual=0.8;
